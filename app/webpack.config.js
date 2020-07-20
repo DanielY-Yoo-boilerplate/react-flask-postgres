@@ -1,9 +1,9 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 
-const HtmlWebPackPlugin = require('html-webpack-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: __dirname, // to automatically find tsconfig.json
@@ -38,8 +38,8 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    host: "0.0.0.0",
-    port: "3000",
+    host: '0.0.0.0',
+    port: '3000',
     watchOptions: {
       poll: true // enable polling since fsevents are not supported in docker
     }
@@ -53,13 +53,13 @@ module.exports = {
       typescript: {
         diagnosticOptions: {
           semantic: true,
-          syntactic: true,
+          syntactic: true
         },
         eslint: {
           enabled: true,
-          files: './src/**/*.{ts,tsx,js,jsx}',
-        },
-      },
+          files: './src/**/*.{ts,tsx,js,jsx}'
+        }
+      }
     })
   ]
-}
+};
